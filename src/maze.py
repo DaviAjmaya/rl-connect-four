@@ -21,6 +21,7 @@ class Player:
         self.x = x
         self.y = y
         self.speed = speed
+        pygame.init()
 
     def move(self, dir):
         if dir not in ['up', 'right', 'down', 'left']:
@@ -35,3 +36,35 @@ class Player:
             self.x -= self.speed
 
 class Game:
+    def __init__(self):
+        maze = Maze(4, 4)
+        player = Player(0, 0, 1)
+
+    def launch(self):
+        pygame.init()
+        pygame.display.set_mode((800,800))
+        pygame.display.set_caption('Deep Maze')
+        self.running = True
+
+    def quit(self):
+        pygame.quit()
+
+    def event(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            # Add other events here
+    def update(self):
+        pass
+
+    def draw(self):
+        pass
+
+    def start(self):
+        self.launch() # Initialize game
+        # Game loop
+        while self.running:
+            self.event() # Process events
+            self.update() # Update game
+            self.draw() # Draw objects
+        pygame.quit()
