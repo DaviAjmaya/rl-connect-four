@@ -1,4 +1,4 @@
-from maze import Game
+from connect_four import Game
 
 def main():
     game = Game()

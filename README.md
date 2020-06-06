@@ -1,4 +1,4 @@
-# Deep reinforcement learning maze
+# Deep reinforcement learning Connect Four
 *Coming soon*
 ## Screenshot
 *Coming soon*
